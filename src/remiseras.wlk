@@ -24,6 +24,13 @@ object teresa {
 	method valorPorKm() { return valorPorKm }
 }
 
+object melina {
+	var trabajaPorClienta
+	
+	method trabajo(clienta) { trabajaPorClienta = clienta }
+	method valorPorKm() { return trabajaPorClienta.valorPorKm() - 3 }
+}
+
 /* remiseras */
 
 object roxana {
@@ -50,4 +57,11 @@ object juana {
 		if(km <= 8) { return 100 }
 		else { return 200 }
 	}
+}
+
+object lucia {
+	var remiseraAReemplazar
+	
+	method reemplazo(remisera) { remiseraAReemplazar = remisera }
+	method precioViaje(cliente, km) { return remiseraAReemplazar.precioViaje(cliente, km) }
 }

@@ -43,3 +43,21 @@ test "viajesJuana" {
 	assert.equals(100, juana.precioViaje(anaMaria, 2))
 	assert.equals(100, juana.precioViaje(teresa, 2))
 }
+
+test "luciaReemplazaAMariela" {
+	
+	lucia.reemplazo(mariela)
+	melina.trabajo(ludmila)
+	
+	assert.equals(150, lucia.precioViaje(melina, 10))
+	assert.equals(50, lucia.precioViaje(melina, 1))
+}
+
+test "luciaReemplazaAGabriela" {
+	
+	lucia.reemplazo(gabriela)
+	melina.trabajo(ludmila)
+	
+	assert.equals(180, lucia.precioViaje(melina, 10))
+	assert.equals(18, lucia.precioViaje(melina, 1))
+}
