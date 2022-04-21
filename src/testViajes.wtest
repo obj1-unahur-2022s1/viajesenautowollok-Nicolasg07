@@ -1,4 +1,5 @@
 import remiseras.*
+import cooperativa.*
 
 test "viajesRoxana" {
 
@@ -60,4 +61,13 @@ test "luciaReemplazaAGabriela" {
 	
 	assert.equals(180, lucia.precioViaje(melina, 10))
 	assert.equals(18, lucia.precioViaje(melina, 1))
+}
+
+test "testCoopetariva" {
+	
+	oficina.asignarRemiseras(roxana, juana)
+	
+	assert.equals(juana, oficina.remiseraElegidaParaViaje(anaMaria, 10))
+	assert.equals(roxana, oficina.remiseraElegidaParaViaje(teresa, 10))
+	assert.equals(roxana, oficina.remiseraElegidaParaViaje(teresa, 4))
 }
