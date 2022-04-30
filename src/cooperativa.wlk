@@ -1,3 +1,6 @@
+/*
+ * Remiseras: BIEN
+ */
 import remiseras.*
 
 object oficina {
@@ -18,7 +21,12 @@ object oficina {
 	
 	// intercambia las remiseras de primera y segunda opción. 
 	// O sea, la que era primera pasa a segunda, y viceversa.
-	method intercambiarRemiseras() { self.asignarRemiseras(segundaRemisera, primeraRemisera) }
+	method intercambiarRemiseras() { 
+		/* 
+		 * Muy Bien reutilizando el codigo de asignarRemiseras
+		 */
+		self.asignarRemiseras(segundaRemisera, primeraRemisera)
+	}
 	
 	/*devuelve la remisera que corresponde asignar a un viaje, 
 	  dados el cliente y la cantidad de kilómetros. 
