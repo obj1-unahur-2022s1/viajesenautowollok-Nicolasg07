@@ -1,4 +1,6 @@
-/* clientas */
+/* 
+ * clientas: Bien
+ * */
 
 object ludmila {
 	
@@ -11,10 +13,9 @@ object anaMaria {
 	method setEconomiaEstable(unBool) { economicamenteEstable = unBool }
 	method economicamenteEstable() { return economicamenteEstable }
 	
-	method valorPorKm() {
-		if (not self.economicamenteEstable()) { return 25 }
-		else { return 30 }
-	}
+	/* Te dejo una forma resumida de hacer este método */
+	method valorPorKm() = if (self.economicamenteEstable()) {30} else {25}
+	
 }
 
 object teresa {
@@ -31,7 +32,9 @@ object melina {
 	method valorPorKm() { return trabajaPorClienta.valorPorKm() - 3 }
 }
 
-/* remiseras */
+/* 
+ * remiseras: Bien
+ */
 
 object roxana {
 	
@@ -39,16 +42,14 @@ object roxana {
 }
 
 object gabriela {
-	
-	method precioViaje(cliente, km) { return ((cliente.valorPorKm() * km) * 0.20) + (cliente.valorPorKm() * km) }
+	/*Rercoda que si queres aumentar un % podes directamente multiplicar por 1.% */
+	method precioViaje(cliente, km) = cliente.valorPorKm() * km * 1.20
 }
 
 object mariela {
-	
-	method precioViaje(cliente, km) {
-		if ((cliente.valorPorKm() * km) > 50) { return cliente.valorPorKm() * km }
-		else { return 50 }
-	}
+	/*Acá podes usar el max() y usar la forma reducida al mismo tiempo*/
+	method precioViaje(cliente, km)= 50.max(cliente.valorPorKm() * km) 
+
 }
 
 object juana {
